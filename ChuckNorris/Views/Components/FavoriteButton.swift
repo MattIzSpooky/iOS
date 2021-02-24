@@ -5,12 +5,11 @@
 import SwiftUI
 
 struct FavoriteButton: View {
-    @State var isFavorite: Bool
+    var action: () -> Void
+    var isFavorite: Bool
 
     var body: some View {
-        Button(action: {
-            isFavorite = !isFavorite
-        }) {
+        Button(action: action) {
             HStack {
                 Image(isFavorite ? "chuck-norris-laugh" : "chuck-norris-angry")
                         .resizable()

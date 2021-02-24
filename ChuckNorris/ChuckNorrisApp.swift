@@ -10,6 +10,8 @@ import SwiftUI
 
 @main
 struct ChuckNorrisApp: App {
+    private var favoriteJokesViewModel = FavoriteJokesViewModel()
+
     var body: some Scene {
         WindowGroup {
             TabView {
@@ -27,7 +29,7 @@ struct ChuckNorrisApp: App {
                             Image(systemName: "gear")
                             Text("Settings")
                         }
-            }
+            }.environmentObject(favoriteJokesViewModel)
         }
     }
 }

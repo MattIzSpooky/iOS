@@ -4,7 +4,7 @@
 
 import Foundation
 
-struct JokeModel : Codable {
+class JokeModel : Codable {
     let id: Int
     let joke: String
     let categories: [String]

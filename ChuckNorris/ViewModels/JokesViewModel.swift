@@ -17,13 +17,14 @@ class JokesViewModel: ObservableObject {
     }
 
     private func getJokes() -> Void {
-        jokes = []
+        jokes = jokeService.fromCache()
 
         cancellable = jokeService.getJokes().sink(receiveCompletion: { completion in
             print("jokes: \(completion)")
         },
                 receiveValue: { response in
                     self.jokes = response.value
+                    self.jokeService.writeToCache(jokes: self.jokes)
                 }
         )
     }

@@ -5,6 +5,7 @@
 import SwiftUI
 
 struct JokeListItem: View {
+    @EnvironmentObject private var favoriteJokeViewModel: FavoriteJokesViewModel
 
     let joke: JokeModel
 
@@ -18,7 +19,10 @@ struct JokeListItem: View {
                     Text(joke.categories.joined(separator: ", ")).foregroundColor(Color.blue)
                 }
             }
-            FavoriteButton(isFavorite: false)
+            Spacer()
+            FavoriteButton(action: {
+                favoriteJokeViewModel.toggleFavorite(joke)
+            }, isFavorite: favoriteJokeViewModel.contains(joke))
         }
     }
 }
