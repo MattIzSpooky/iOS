@@ -12,11 +12,7 @@ class JokesViewModel: ObservableObject {
 
     @Published() var jokes = [JokeModel]()
 
-    init() {
-        getJokes()
-    }
-
-    private func getJokes() -> Void {
+    func getJokes() -> Void {
         jokes = jokeService.fromCache()
 
         cancellable = jokeService.getJokes().sink(receiveCompletion: { completion in

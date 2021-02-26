@@ -7,25 +7,14 @@ import Combine
 
 final class JokeService {
     private let client = ApiClient()
-
-    private static let persistenceKey = "joke-cache"
+    private let jokePersistenceManager = PersistenceManager<[JokeModel]>(persistenceKey: "joke-cache")
 
     func fromCache() -> [JokeModel] {
-        var jokes = [JokeModel]()
-
-        if let data = UserDefaults.standard.data(forKey: JokeService.persistenceKey) {
-            if let decoded = try? JSONDecoder().decode([JokeModel].self, from: data) {
-                jokes = decoded
-            }
-        }
-
-        return jokes
+        jokePersistenceManager.fromDisk() ?? [JokeModel]()
     }
 
     func writeToCache(jokes: [JokeModel] = []) {
-        if let encoded = try? JSONEncoder().encode(jokes) {
-            UserDefaults.standard.set(encoded, forKey: JokeService.persistenceKey)
-        }
+        jokePersistenceManager.toDisk(items: jokes)
     }
 
     func getJokes() -> AnyPublisher<ApiResponse<[JokeModel]>, Error> {
