@@ -14,6 +14,7 @@
 		12A2350C3C4F2E635A5C38F4 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A237720FD4B1B9DE242D36 /* SettingsService.swift */; };
 		12A23525D7987D47EA593EA4 /* FavoriteJokesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A23B57E6EC17287A283B8A /* FavoriteJokesViewModel.swift */; };
 		12A235E52D8279FB8F9E53E8 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A2325A20B0DB0CB3056804 /* Settings.swift */; };
+		12A236966C4AD6ED9F131EC1 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A236EBE8990DEB4EA460F7 /* SettingsViewModel.swift */; };
 		12A236AA06B96D50F33C7AEC /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A235B7786C7B9E633656BA /* FavoriteButton.swift */; };
 		12A2376EF22CD6D73DCC7B48 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A237DC252F6239BC0601E3 /* ApiResponse.swift */; };
 		12A237CFDA5509706FD9BD87 /* FavoriteJokeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A2329983621B5CE006A98C /* FavoriteJokeService.swift */; };
@@ -22,6 +23,7 @@
 		12A239F3D71BAE512D9E0C76 /* JokeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A239FF4DBFDA5C6DAF2645 /* JokeService.swift */; };
 		12A23AA94F39C565C08998E4 /* JokeListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A231A97AC3598AE4466263 /* JokeListItem.swift */; };
 		12A23B003D6AEB754FF1902B /* JokesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A234BB9099F141D7B06963 /* JokesView.swift */; };
+		12A23DE15ABE674EC0042EC4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A235E454A63615FFF0C623 /* SettingsView.swift */; };
 		7B9887F125E5465B0084085D /* ChuckNorrisApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9887F025E5465B0084085D /* ChuckNorrisApp.swift */; };
 		7B9887F525E5465D0084085D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B9887F425E5465D0084085D /* Assets.xcassets */; };
 		7B9887F825E5465D0084085D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B9887F725E5465D0084085D /* Preview Assets.xcassets */; };
@@ -55,6 +57,8 @@
 		12A2344131FCBC9B7FFD43BE /* JokeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JokeModel.swift; sourceTree = "<group>"; };
 		12A234BB9099F141D7B06963 /* JokesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JokesView.swift; sourceTree = "<group>"; };
 		12A235B7786C7B9E633656BA /* FavoriteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
+		12A235E454A63615FFF0C623 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		12A236EBE8990DEB4EA460F7 /* SettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		12A237720FD4B1B9DE242D36 /* SettingsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
 		12A237DC252F6239BC0601E3 /* ApiResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
 		12A239FF4DBFDA5C6DAF2645 /* JokeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JokeService.swift; sourceTree = "<group>"; };
@@ -126,6 +130,7 @@
 				12A234BB9099F141D7B06963 /* JokesView.swift */,
 				12A23FD9F2D2629AC32FAA1A /* Components */,
 				12A23010FEA59377F614DB00 /* ActionSheets */,
+				12A235E454A63615FFF0C623 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -135,6 +140,7 @@
 			children = (
 				12A23AF86D10AD84FB643BCA /* JokesViewModel.swift */,
 				12A23B57E6EC17287A283B8A /* FavoriteJokesViewModel.swift */,
+				12A236EBE8990DEB4EA460F7 /* SettingsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -365,6 +371,8 @@
 				12A2336EC3C946A34B1B11C8 /* CategoriesSheet.swift in Sources */,
 				12A2350C3C4F2E635A5C38F4 /* SettingsService.swift in Sources */,
 				12A235E52D8279FB8F9E53E8 /* Settings.swift in Sources */,
+				12A23DE15ABE674EC0042EC4 /* SettingsView.swift in Sources */,
+				12A236966C4AD6ED9F131EC1 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

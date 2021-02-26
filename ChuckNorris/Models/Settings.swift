@@ -4,6 +4,14 @@
 
 import Foundation
 
-struct Settings {
+class Settings: Codable {
+    var firstName: String
+    var lastName: String
 
+    var excludedCategories = ["explicit"]
+
+    init() {
+        firstName = "Chuck"
+        lastName = "Norris"
+    }
 }

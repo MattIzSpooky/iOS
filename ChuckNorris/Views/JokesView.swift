@@ -20,10 +20,12 @@ struct JokesView: View {
                     JokeListItem(joke: joke)
                 }.listStyle(PlainListStyle())
                         .navigationBarTitle(Text("Jokes"), displayMode: .inline)
-                        .navigationBarItems(trailing: trailing())
+                        .navigationBarItems(leading: leading(), trailing: trailing())
             }
+        }.onAppear {
+            print("Appeared")
+            jokesViewModel.getJokes()
         }
-                .onAppear { jokesViewModel.getJokes() }
     }
 
     private func trailing() -> some View {
@@ -32,7 +34,19 @@ struct JokesView: View {
         }
                 .sheet(isPresented: $popover) {
                     CategoriesSheet(isPresented: $popover)
-                }
+                }.onDisappear {
+            popover = false
+            jokesViewModel.getJokes()
+        }
+    }
+
+    private func leading() -> some View {
+        NavigationLink(destination: SettingsView()
+                .onDisappear {
+                    jokesViewModel.getJokes()
+                }) {
+            Text("Settings")
+        }
     }
 }
 

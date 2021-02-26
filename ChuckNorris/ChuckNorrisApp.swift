@@ -19,16 +19,10 @@ struct ChuckNorrisApp: App {
                     Image(systemName: "person")
                     Text("Jokes")
                 }
-                Text("The content of the second view")
-                        .tabItem {
-                            Image(systemName: "heart.fill")
-                            Text("Favorites")
-                        }
-                Text("The content of the 3rd view")
-                        .tabItem {
-                            Image(systemName: "gear")
-                            Text("Settings")
-                        }
+                Text("The content of the second view").tabItem {
+                    Image(systemName: "heart.fill")
+                    Text("Favorites")
+                }
             }.environmentObject(favoriteJokesViewModel)
         }
     }
