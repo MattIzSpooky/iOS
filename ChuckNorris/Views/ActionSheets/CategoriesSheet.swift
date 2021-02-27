@@ -6,25 +6,30 @@ import SwiftUI
 
 struct CategoriesSheet: View {
     @Binding var isPresented: Bool
-    private let categories = ["explicit"]
+    let categories: [String]
 
 
     var body: some View {
         NavigationView {
-            List(categories, id: \.self) { category in
-                Button(action: { print("category") }) {
-                    HStack {
-                        Text(category)
+            Group {
+                if (categories.isEmpty) {
+                    ProgressView()
+                } else {
+                    List(categories, id: \.self) { category in
+                        Button(action: { print("category") }) {
+                            HStack {
+                                Text(category)
 
 //                        Spacer()
 
 //                        if selected(sorter) {
 //                            Image(systemName: "checkmark")
 //                        }
+                            }
+                        }
                     }
                 }
-            }
-                    .navigationTitle("Categories")
+            }.navigationTitle("Categories")
                     .navigationBarTitleDisplayMode(.inline)
         }
     }

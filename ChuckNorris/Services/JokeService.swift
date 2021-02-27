@@ -29,4 +29,8 @@ final class JokeService {
 
         return client.fetch(client.createURL("/jokes", query: queryItems))
     }
+
+    func getCategories() -> AnyPublisher<ApiResponse<[String]>, Error> {
+        client.fetch(client.createURL("/categories"))
+    }
 }

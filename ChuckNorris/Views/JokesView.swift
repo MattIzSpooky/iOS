@@ -23,7 +23,6 @@ struct JokesView: View {
                         .navigationBarItems(leading: leading(), trailing: trailing())
             }
         }.onAppear {
-            print("Appeared")
             jokesViewModel.getJokes()
         }
     }
@@ -33,11 +32,8 @@ struct JokesView: View {
             Text("Categories")
         }
                 .sheet(isPresented: $popover) {
-                    CategoriesSheet(isPresented: $popover)
-                }.onDisappear {
-            popover = false
-            jokesViewModel.getJokes()
-        }
+                    CategoriesSheet(isPresented: $popover, categories: jokesViewModel.categories)
+                }
     }
 
     private func leading() -> some View {
