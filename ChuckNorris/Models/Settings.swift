@@ -8,7 +8,7 @@ class Settings: Codable {
     var firstName: String
     var lastName: String
 
-    var excludedCategories = ["explicit"]
+    var excludedCategories = [String]()
 
     init() {
         firstName = "Chuck"

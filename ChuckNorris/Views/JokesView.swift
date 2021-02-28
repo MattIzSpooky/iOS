@@ -29,10 +29,14 @@ struct JokesView: View {
 
     private func trailing() -> some View {
         Button(action: { popover = true }) {
-            Text("Categories")
+            Text("Excl. Categories")
         }
                 .sheet(isPresented: $popover) {
-                    CategoriesSheet(isPresented: $popover, categories: jokesViewModel.categories)
+                    CategoriesSheet()
+                            .onDisappear {
+                                jokesViewModel.getJokes()
+                            }
+                            .environmentObject(jokesViewModel)
                 }
     }
 

@@ -19,7 +19,7 @@ final class ApiClient {
                 .eraseToAnyPublisher()
     }
 
-    func createURL(_ path: String, query: [URLQueryItem] = []) -> URL {
+    func makeUrl(_ path: String, query: [URLQueryItem] = []) -> URL {
         var components = URLComponents()
 
         components.scheme = "https"
@@ -29,6 +29,10 @@ final class ApiClient {
 
         components.queryItems?.append(URLQueryItem(name: "escape", value: "javascript"))
 
-        return components.url!
+        guard let url = components.url else {
+            fatalError("Invalid URL. Possible programming mistake?")
+        }
+
+        return url
     }
 }

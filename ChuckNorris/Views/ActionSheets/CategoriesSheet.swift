@@ -5,31 +5,29 @@
 import SwiftUI
 
 struct CategoriesSheet: View {
-    @Binding var isPresented: Bool
-    let categories: [String]
-
+    @EnvironmentObject private var jokesViewModel: JokesViewModel
 
     var body: some View {
         NavigationView {
             Group {
-                if (categories.isEmpty) {
+                if (jokesViewModel.categories.isEmpty) {
                     ProgressView()
                 } else {
-                    List(categories, id: \.self) { category in
-                        Button(action: { print("category") }) {
+                    List(jokesViewModel.categories, id: \.self) { category in
+                        Button(action: { jokesViewModel.toggleExcludedCategory(category: category) }) {
                             HStack {
                                 Text(category)
 
-//                        Spacer()
+                                Spacer()
 
-//                        if selected(sorter) {
-//                            Image(systemName: "checkmark")
-//                        }
+                                if jokesViewModel.categoryIsExcluded(category: category) {
+                                    Image(systemName: "xmark").foregroundColor(.red)
+                                }
                             }
                         }
                     }
                 }
-            }.navigationTitle("Categories")
+            }.navigationTitle("Excluded Categories")
                     .navigationBarTitleDisplayMode(.inline)
         }
     }
