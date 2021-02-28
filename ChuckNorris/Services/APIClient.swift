@@ -18,7 +18,9 @@ final class ApiClient {
                 .receive(on: DispatchQueue.main)
                 .eraseToAnyPublisher()
     }
+}
 
+extension ApiClient {
     func makeUrl(_ path: String, query: [URLQueryItem] = []) -> URL {
         var components = URLComponents()
 

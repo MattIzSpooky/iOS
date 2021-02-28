@@ -19,7 +19,7 @@ struct ChuckNorrisApp: App {
                     Image(systemName: "person")
                     Text("Jokes")
                 }
-                Text("The content of the second view").tabItem {
+                FavoritesView().tabItem {
                     Image(systemName: "heart.fill")
                     Text("Favorites")
                 }

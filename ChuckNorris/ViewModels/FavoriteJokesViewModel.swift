@@ -9,23 +9,37 @@ class FavoriteJokesViewModel: ObservableObject {
 
     @Published var favoriteJokes = [JokeModel]()
 
-    init() {
+    func getFavorites() {
         favoriteJokes = favoriteService.getFavorites()
     }
 
     func toggleFavorite(_ joke: JokeModel) -> Void {
-        contains(joke) ? remove(joke) : add(joke)
+        contains(joke: joke) ? remove(joke: joke) : add(joke: joke)
     }
 
-    func add (_ joke: JokeModel) {
-        favoriteJokes = favoriteService.add(favoriteJokes, coin: joke)
+    func contains(joke: JokeModel) -> Bool {
+        favoriteJokes.contains(where: { p in
+            p.id == joke.id
+        })
     }
 
-    func remove(_ joke: JokeModel) {
-        favoriteJokes = favoriteService.remove(favoriteJokes, coin: joke)
+    func add(joke: JokeModel)  {
+        favoriteJokes.append(joke)
+
+        favoriteService.writeToDisk(favorites: favoriteJokes)
     }
 
-    func contains(_ joke: JokeModel) -> Bool {
-        favoriteService.contains(favoriteJokes, id: joke.id)
+    func remove(joke: JokeModel) {
+        favoriteJokes = favoriteJokes.filter({ p in
+            p.id != joke.id
+        })
+
+        favoriteService.writeToDisk(favorites: favoriteJokes)
+    }
+
+    func deleteAtOffset(at offset: IndexSet) {
+        favoriteJokes.remove(atOffsets: offset)
+
+        favoriteService.writeToDisk(favorites: favoriteJokes)
     }
 }

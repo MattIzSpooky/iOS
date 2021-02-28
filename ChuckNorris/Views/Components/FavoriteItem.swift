@@ -1,12 +1,10 @@
 //
-// Created by Matthijs Kropholler on 23/02/2021.
+// Created by Matthijs Kropholler on 28/02/2021.
 //
 
 import SwiftUI
 
-struct JokeListItem: View {
-    @EnvironmentObject private var favoriteJokeViewModel: FavoriteJokesViewModel
-
+struct FavoriteItem: View {
     let joke: JokeModel
 
     var body: some View {
@@ -19,10 +17,6 @@ struct JokeListItem: View {
                     Text(joke.categories.joined(separator: ", ")).foregroundColor(Color.blue)
                 }
             }
-            Spacer()
-            FavoriteButton(action: {
-                favoriteJokeViewModel.toggleFavorite(joke)
-            }, isFavorite: favoriteJokeViewModel.contains(joke: joke))
         }
     }
 }
