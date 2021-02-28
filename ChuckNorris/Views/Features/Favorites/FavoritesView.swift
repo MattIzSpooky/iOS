@@ -14,7 +14,7 @@ struct FavoritesView: View {
             } else {
                 List {
                     ForEach(favoriteViewModel.favoriteJokes, id: \.id) { joke in
-                        NavigationLink(destination: Text(joke.joke)) {
+                        NavigationLink(destination: FavoriteDetail(joke: joke)) {
                             FavoriteItem(joke: joke)
                         }
                     }.onDelete(perform: favoriteViewModel.deleteAtOffset)

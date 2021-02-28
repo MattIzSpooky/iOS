@@ -63,4 +63,8 @@ class JokesViewModel: ObservableObject {
     func categoryIsExcluded(category: String) -> Bool {
         settings.excludedCategories.contains(category)
     }
+
+    func refreshSettings() {
+        settings = settingsService.get()
+    }
 }

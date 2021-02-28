@@ -11,6 +11,8 @@ struct SettingsView: View {
         Form {
             TextField("First name", text: $settingsViewModel.settings.firstName, onCommit: { settingsViewModel.save() })
             TextField("Last name", text: $settingsViewModel.settings.lastName, onCommit: { settingsViewModel.save() })
+
+            Button(action: settingsViewModel.save, label: { Text("Save") })
         }.navigationBarTitle("Settings")
     }
 }

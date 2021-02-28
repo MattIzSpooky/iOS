@@ -31,11 +31,8 @@ struct JokesView: View {
         Button(action: { popover = true }) {
             Text("Excl. Categories")
         }
-                .sheet(isPresented: $popover) {
+                .sheet(isPresented: $popover, onDismiss: jokesViewModel.getJokes) {
                     CategoriesSheet()
-                            .onDisappear {
-                                jokesViewModel.getJokes()
-                            }
                             .environmentObject(jokesViewModel)
                 }
     }
@@ -43,6 +40,7 @@ struct JokesView: View {
     private func leading() -> some View {
         NavigationLink(destination: SettingsView()
                 .onDisappear {
+                    jokesViewModel.refreshSettings()
                     jokesViewModel.getJokes()
                 }) {
             Text("Settings")
