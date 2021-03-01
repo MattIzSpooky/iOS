@@ -4,11 +4,10 @@
 
 import SwiftUI
 
-struct CategoriesSheet: View {
+struct CategoriesView: View {
     @EnvironmentObject private var jokesViewModel: JokesViewModel
 
     var body: some View {
-        NavigationView {
             Group {
                 if (jokesViewModel.categories.isEmpty) {
                     ProgressView()
@@ -25,10 +24,8 @@ struct CategoriesSheet: View {
                                 }
                             }
                         }
-                    }
+                    }.navigationBarTitle("Excluded Categories")
                 }
-            }.navigationTitle("Excluded Categories")
-                    .navigationBarTitleDisplayMode(.inline)
-        }
+            }
     }
 }

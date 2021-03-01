@@ -11,7 +11,6 @@
 		12A231E1F56BDCAE5AF61A27 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A23BB72483753C31597950 /* PersistenceManager.swift */; };
 		12A2324C87D8B9716B9589BA /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A23DD626872F35B3A19703 /* ApiClient.swift */; };
 		12A2324D3329F18B5BC5D196 /* FavoriteDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A23784B79DC26F87D8E1A6 /* FavoriteDetail.swift */; };
-		12A2336EC3C946A34B1B11C8 /* CategoriesSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A23034C7CB0224D4F08670 /* CategoriesSheet.swift */; };
 		12A2350C3C4F2E635A5C38F4 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A237720FD4B1B9DE242D36 /* SettingsService.swift */; };
 		12A23525D7987D47EA593EA4 /* FavoriteJokesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A23B57E6EC17287A283B8A /* FavoriteJokesViewModel.swift */; };
 		12A235E52D8279FB8F9E53E8 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A2325A20B0DB0CB3056804 /* Settings.swift */; };
@@ -25,6 +24,7 @@
 		12A239F3D71BAE512D9E0C76 /* JokeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A239FF4DBFDA5C6DAF2645 /* JokeService.swift */; };
 		12A23AA94F39C565C08998E4 /* JokeListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A231A97AC3598AE4466263 /* JokeListItem.swift */; };
 		12A23B003D6AEB754FF1902B /* JokesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A234BB9099F141D7B06963 /* JokesView.swift */; };
+		12A23D454E7BCD0351A6F350 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A23C6914A50820FD6ED390 /* CategoriesView.swift */; };
 		12A23E8020B6FE8F14B58349 /* FavoriteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A23AB29DDE45B0041602F1 /* FavoriteItem.swift */; };
 		12A23F739B1263EA0EFB6DEC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A23427860D08BAA048A028 /* SettingsView.swift */; };
 		7B2774B625ECFD77006E8395 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B2774B525ECFD77006E8395 /* WidgetKit.framework */; };
@@ -88,7 +88,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		12A23034C7CB0224D4F08670 /* CategoriesSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesSheet.swift; sourceTree = "<group>"; };
 		12A231A97AC3598AE4466263 /* JokeListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JokeListItem.swift; sourceTree = "<group>"; };
 		12A2325A20B0DB0CB3056804 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		12A2329983621B5CE006A98C /* FavoriteJokeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteJokeService.swift; sourceTree = "<group>"; };
@@ -107,6 +106,7 @@
 		12A23AF86D10AD84FB643BCA /* JokesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JokesViewModel.swift; sourceTree = "<group>"; };
 		12A23B57E6EC17287A283B8A /* FavoriteJokesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteJokesViewModel.swift; sourceTree = "<group>"; };
 		12A23BB72483753C31597950 /* PersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		12A23C6914A50820FD6ED390 /* CategoriesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
 		12A23DD626872F35B3A19703 /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		7B2774B325ECFD77006E8395 /* RandomJokeWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RandomJokeWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B2774B525ECFD77006E8395 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -178,21 +178,13 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		12A23010FEA59377F614DB00 /* ActionSheets */ = {
-			isa = PBXGroup;
-			children = (
-				12A23034C7CB0224D4F08670 /* CategoriesSheet.swift */,
-			);
-			path = ActionSheets;
-			sourceTree = "<group>";
-		};
 		12A232FFC0D045BB7EA2D02C /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				12A234BB9099F141D7B06963 /* JokesView.swift */,
 				12A23FD9F2D2629AC32FAA1A /* Components */,
-				12A23010FEA59377F614DB00 /* ActionSheets */,
 				12A235A9953505E55D155A5B /* Features */,
+				12A23C6914A50820FD6ED390 /* CategoriesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -533,7 +525,6 @@
 				12A237CFDA5509706FD9BD87 /* FavoriteJokeService.swift in Sources */,
 				12A23525D7987D47EA593EA4 /* FavoriteJokesViewModel.swift in Sources */,
 				12A231E1F56BDCAE5AF61A27 /* PersistenceManager.swift in Sources */,
-				12A2336EC3C946A34B1B11C8 /* CategoriesSheet.swift in Sources */,
 				12A2350C3C4F2E635A5C38F4 /* SettingsService.swift in Sources */,
 				12A235E52D8279FB8F9E53E8 /* Settings.swift in Sources */,
 				12A236966C4AD6ED9F131EC1 /* SettingsViewModel.swift in Sources */,
@@ -541,6 +532,7 @@
 				12A23F739B1263EA0EFB6DEC /* SettingsView.swift in Sources */,
 				12A238683009251334A023B4 /* FavoritesView.swift in Sources */,
 				12A2324D3329F18B5BC5D196 /* FavoriteDetail.swift in Sources */,
+				12A23D454E7BCD0351A6F350 /* CategoriesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

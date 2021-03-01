@@ -11,6 +11,10 @@ struct JokesView: View {
     @ObservedObject private var jokesViewModel = JokesViewModel()
     @State private var popover = false
 
+    let orientationChanged = NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)
+            .makeConnectable()
+            .autoconnect()
+
     var body: some View {
         NavigationView {
             if jokesViewModel.jokes.isEmpty {
@@ -23,18 +27,20 @@ struct JokesView: View {
                         .navigationBarItems(leading: leading(), trailing: trailing())
             }
         }.onAppear {
-            jokesViewModel.getJokes()
-        }
+                    jokesViewModel.getJokes()
+                }
+                .navigationViewStyle(StackNavigationViewStyle())
     }
 
     private func trailing() -> some View {
-        Button(action: { popover = true }) {
+        NavigationLink(destination: CategoriesView()
+                .environmentObject(jokesViewModel)
+                .onDisappear {
+                    jokesViewModel.refreshSettings()
+                    jokesViewModel.getJokes()
+                }) {
             Text("Excl. Categories")
         }
-                .sheet(isPresented: $popover, onDismiss: jokesViewModel.getJokes) {
-                    CategoriesSheet()
-                            .environmentObject(jokesViewModel)
-                }
     }
 
     private func leading() -> some View {

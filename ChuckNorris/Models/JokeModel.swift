@@ -5,9 +5,9 @@
 import Foundation
 
 class JokeModel : Codable {
-    let id: Int
-    let joke: String
-    let categories: [String]
+    public let id: Int
+    public let joke: String
+    public let categories: [String]
     
     init(id: Int, joke: String, categories: [String] = []) {
         self.id = id
