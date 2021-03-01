@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-final class RandomJokeViewModel : ObservableObject {
+final class RandomJokeViewModel {
     private let jokeService = JokeService()
     private let settingsService = SettingsService()
     

@@ -9,8 +9,10 @@ import Foundation
 import WidgetKit
 
 struct RandomJokeProvider: TimelineProvider {
-    let randomJokeViewModel = RandomJokeViewModel()
-    
+    private let randomJokeViewModel = RandomJokeViewModel()
+
+    private static let TimeIntervalInSeconds = 2
+
     func placeholder(in context: Context) -> RandomJokeEntry {
         RandomJokeEntry(date: Date(), joke: JokeModel(id: 1, joke: "test"))
     }
@@ -22,19 +24,18 @@ struct RandomJokeProvider: TimelineProvider {
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<RandomJokeEntry>) -> ()) {
         randomJokeViewModel.getRandomJoke { response in
-                let date = Date()
-                let calendar = Calendar.current
-                            
-            let entries = response?.enumerated().map { offset, currentJoke -> RandomJokeEntry in
-                    let date = calendar.date(byAdding: .second, value: offset * 5, to: date)
-                    
-                    return RandomJokeEntry(date: date, joke: currentJoke)
-                }
+            let date = Date()
+            let calendar = Calendar.current
 
-                let timeLine = Timeline(entries: entries ?? [], policy: .atEnd)
-                
-                completion(timeLine)
-            
+            let entries = response?.enumerated().map { offset, currentJoke -> RandomJokeEntry in
+                let newDate = calendar.date(byAdding: .second, value: offset * RandomJokeProvider.TimeIntervalInSeconds, to: date) ?? date
+
+                return RandomJokeEntry(date: newDate, joke: currentJoke)
+            }
+
+            let timeLine = Timeline(entries: entries ?? [], policy: .atEnd)
+
+            completion(timeLine)
         }
     }
 }

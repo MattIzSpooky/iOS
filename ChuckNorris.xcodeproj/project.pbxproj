@@ -117,6 +117,8 @@
 		7B56002825ECFEA90043F5F3 /* RandomJokeWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomJokeWidgetView.swift; sourceTree = "<group>"; };
 		7B56002E25ED00A40043F5F3 /* RandomJokeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomJokeViewModel.swift; sourceTree = "<group>"; };
 		7B56004825ED0A2C0043F5F3 /* RandomJokeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomJokeProvider.swift; sourceTree = "<group>"; };
+		7B56005325ED0F640043F5F3 /* ChuckNorris.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChuckNorris.entitlements; sourceTree = "<group>"; };
+		7B56005425ED0F830043F5F3 /* RandomJokeWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RandomJokeWidgetExtension.entitlements; sourceTree = "<group>"; };
 		7B9887ED25E5465B0084085D /* ChuckNorris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChuckNorris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B9887F025E5465B0084085D /* ChuckNorrisApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckNorrisApp.swift; sourceTree = "<group>"; };
 		7B9887F425E5465D0084085D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 		7B9887E425E5465B0084085D = {
 			isa = PBXGroup;
 			children = (
+				7B56005425ED0F830043F5F3 /* RandomJokeWidgetExtension.entitlements */,
 				7B9887EF25E5465B0084085D /* ChuckNorris */,
 				7B98880125E5465D0084085D /* ChuckNorrisTests */,
 				7B98880C25E5465D0084085D /* ChuckNorrisUITests */,
@@ -300,6 +303,7 @@
 		7B9887EF25E5465B0084085D /* ChuckNorris */ = {
 			isa = PBXGroup;
 			children = (
+				7B56005325ED0F640043F5F3 /* ChuckNorris.entitlements */,
 				7B9887F025E5465B0084085D /* ChuckNorrisApp.swift */,
 				7B9887F425E5465D0084085D /* Assets.xcassets */,
 				7B9887F925E5465D0084085D /* Info.plist */,
@@ -582,7 +586,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = RandomJokeWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 45A9W2MVL6;
 				INFOPLIST_FILE = RandomJokeWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -602,6 +608,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = RandomJokeWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RandomJokeWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -739,8 +746,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ChuckNorris/ChuckNorris.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ChuckNorris/Preview Content\"";
+				DEVELOPMENT_TEAM = 45A9W2MVL6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ChuckNorris/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -761,6 +770,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ChuckNorris/ChuckNorris.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ChuckNorris/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
