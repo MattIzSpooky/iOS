@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12A2303F56836D1D3F0A019C /* FavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A23D64D97F1655DE6D5541 /* FavoriteModel.swift */; };
 		12A2319A6996B2076AC64BBF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 12A232B2141A364A784D63B0 /* .gitignore */; };
 		12A231E1F56BDCAE5AF61A27 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A23BB72483753C31597950 /* PersistenceManager.swift */; };
 		12A2324C87D8B9716B9589BA /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A23DD626872F35B3A19703 /* ApiClient.swift */; };
@@ -107,6 +108,7 @@
 		12A23B57E6EC17287A283B8A /* FavoriteJokesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteJokesViewModel.swift; sourceTree = "<group>"; };
 		12A23BB72483753C31597950 /* PersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		12A23C6914A50820FD6ED390 /* CategoriesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
+		12A23D64D97F1655DE6D5541 /* FavoriteModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteModel.swift; sourceTree = "<group>"; };
 		12A23DD626872F35B3A19703 /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		7B2774B325ECFD77006E8395 /* RandomJokeWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RandomJokeWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B2774B525ECFD77006E8395 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -214,6 +216,7 @@
 				12A2344131FCBC9B7FFD43BE /* JokeModel.swift */,
 				12A237DC252F6239BC0601E3 /* ApiResponse.swift */,
 				12A2325A20B0DB0CB3056804 /* Settings.swift */,
+				12A23D64D97F1655DE6D5541 /* FavoriteModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -533,6 +536,7 @@
 				12A238683009251334A023B4 /* FavoritesView.swift in Sources */,
 				12A2324D3329F18B5BC5D196 /* FavoriteDetail.swift in Sources */,
 				12A23D454E7BCD0351A6F350 /* CategoriesView.swift in Sources */,
+				12A2303F56836D1D3F0A019C /* FavoriteModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

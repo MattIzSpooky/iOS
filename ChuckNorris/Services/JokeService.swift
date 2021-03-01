@@ -41,19 +41,16 @@ final class JokeService {
     }
     
     private func createUrlQueryParamsFromSettings(settings: Settings) -> [URLQueryItem] {
-        // Default to Chuck or Norris when a part of the name is empty.
-        if (settings.firstName == "") {
-            settings.firstName = "Chuck"
+        var queryItems = [URLQueryItem(name: "exclude", value: "[\(settings.excludedCategories.joined(separator: ","))]")]
+
+        if (settings.firstName != "") {
+            queryItems.append(URLQueryItem(name: "firstName", value: settings.firstName))
         }
 
-        if (settings.lastName == "") {
-            settings.lastName = "Norris"
+        if (settings.lastName != "") {
+            queryItems.append( URLQueryItem(name: "lastName", value: settings.lastName))
         }
 
-        return [
-            URLQueryItem(name: "exclude", value: "[\(settings.excludedCategories.joined(separator: ","))]"),
-            URLQueryItem(name: "firstName", value: settings.firstName),
-            URLQueryItem(name: "lastName", value: settings.lastName)
-        ];
+        return queryItems
     }
 }

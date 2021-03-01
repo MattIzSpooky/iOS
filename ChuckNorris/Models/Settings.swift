@@ -11,7 +11,7 @@ class Settings: Codable {
     var excludedCategories = [String]()
 
     init() {
-        firstName = "Chuck"
-        lastName = "Norris"
+        firstName = ""
+        lastName = ""
     }
 }

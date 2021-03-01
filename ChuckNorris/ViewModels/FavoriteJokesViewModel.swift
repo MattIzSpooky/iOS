@@ -6,6 +6,7 @@ import Foundation
 
 class FavoriteJokesViewModel: ObservableObject {
     private let favoriteService = FavoriteJokeService()
+    private let settingsService = SettingsService()
 
     @Published var favoriteJokes = [JokeModel]()
 
@@ -26,7 +27,7 @@ class FavoriteJokesViewModel: ObservableObject {
     func add(joke: JokeModel)  {
         favoriteJokes.append(joke)
 
-        favoriteService.writeToDisk(favorites: favoriteJokes)
+        toDisk()
     }
 
     func remove(joke: JokeModel) {
@@ -34,12 +35,22 @@ class FavoriteJokesViewModel: ObservableObject {
             p.id != joke.id
         })
 
-        favoriteService.writeToDisk(favorites: favoriteJokes)
+        toDisk()
+    }
+
+    private func toDisk() {
+        let settings = settingsService.get()
+
+        let favorites = favoriteJokes.map { model -> FavoriteModel in
+            FavoriteModel(joke: model, name: "\(settings.firstName) \(settings.lastName)")
+        }
+
+        favoriteService.writeToDisk(favorites: favorites)
     }
 
     func deleteAtOffset(at offset: IndexSet) {
         favoriteJokes.remove(atOffsets: offset)
 
-        favoriteService.writeToDisk(favorites: favoriteJokes)
+        toDisk()
     }
 }
