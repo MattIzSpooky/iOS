@@ -23,10 +23,6 @@ final class FavoriteJokeService {
         })
     }
 
-    private func replaceNameWithSavedName() {
-
-    }
-
     func writeToDisk(favorites: [FavoriteModel]) {
         favoriteManager.toDisk(items: favorites)
     }
