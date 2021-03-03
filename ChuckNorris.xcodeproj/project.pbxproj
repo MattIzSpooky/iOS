@@ -46,8 +46,6 @@
 		7B9887F125E5465B0084085D /* ChuckNorrisApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9887F025E5465B0084085D /* ChuckNorrisApp.swift */; };
 		7B9887F525E5465D0084085D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B9887F425E5465D0084085D /* Assets.xcassets */; };
 		7B9887F825E5465D0084085D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B9887F725E5465D0084085D /* Preview Assets.xcassets */; };
-		7B98880325E5465D0084085D /* ChuckNorrisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B98880225E5465D0084085D /* ChuckNorrisTests.swift */; };
-		7B98880E25E5465D0084085D /* ChuckNorrisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B98880D25E5465D0084085D /* ChuckNorrisUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,11 +125,7 @@
 		7B9887F725E5465D0084085D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7B9887F925E5465D0084085D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B9887FE25E5465D0084085D /* ChuckNorrisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChuckNorrisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B98880225E5465D0084085D /* ChuckNorrisTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckNorrisTests.swift; sourceTree = "<group>"; };
-		7B98880425E5465D0084085D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B98880925E5465D0084085D /* ChuckNorrisUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChuckNorrisUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B98880D25E5465D0084085D /* ChuckNorrisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckNorrisUITests.swift; sourceTree = "<group>"; };
-		7B98880F25E5465D0084085D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,8 +269,6 @@
 			children = (
 				7B56005425ED0F830043F5F3 /* RandomJokeWidgetExtension.entitlements */,
 				7B9887EF25E5465B0084085D /* ChuckNorris */,
-				7B98880125E5465D0084085D /* ChuckNorrisTests */,
-				7B98880C25E5465D0084085D /* ChuckNorrisUITests */,
 				7B2774B925ECFD77006E8395 /* RandomJokeWidget */,
 				7B2774B425ECFD77006E8395 /* Frameworks */,
 				7B9887EE25E5465B0084085D /* Products */,
@@ -317,24 +309,6 @@
 				7B9887F725E5465D0084085D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		7B98880125E5465D0084085D /* ChuckNorrisTests */ = {
-			isa = PBXGroup;
-			children = (
-				7B98880225E5465D0084085D /* ChuckNorrisTests.swift */,
-				7B98880425E5465D0084085D /* Info.plist */,
-			);
-			path = ChuckNorrisTests;
-			sourceTree = "<group>";
-		};
-		7B98880C25E5465D0084085D /* ChuckNorrisUITests */ = {
-			isa = PBXGroup;
-			children = (
-				7B98880D25E5465D0084085D /* ChuckNorrisUITests.swift */,
-				7B98880F25E5465D0084085D /* Info.plist */,
-			);
-			path = ChuckNorrisUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -544,7 +518,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B98880325E5465D0084085D /* ChuckNorrisTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,7 +525,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B98880E25E5465D0084085D /* ChuckNorrisUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
