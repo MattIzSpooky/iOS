@@ -9,7 +9,7 @@ final class JokeService {
     private let client = ApiClient()
     private let jokePersistenceManager = PersistenceManager<[JokeModel]>(persistenceKey: "joke-cache")
     private let categoriesManager = PersistenceManager<[String]>(persistenceKey: "categories-cache")
-    
+
     private static let AmountOfRandomJokes = 10
 
     func jokesFromCache() -> [JokeModel] {
@@ -29,18 +29,18 @@ final class JokeService {
     }
 
     func getJokes(settings: Settings) -> AnyPublisher<ApiResponse<[JokeModel]>, Error> {
-        client.fetch(client.makeUrl("/jokes", query: createUrlQueryParamsFromSettings(settings: settings)))
+        client.fetch(client.makeUrl("/jokes", query: createUrlQueryParams(settings: settings)))
     }
 
     func getCategories() -> AnyPublisher<ApiResponse<[String]>, Error> {
         client.fetch(client.makeUrl("/categories"))
     }
-    
+
     func getRandomJokes(settings: Settings) -> AnyPublisher<ApiResponse<[JokeModel]>, Error> {
-        client.fetch(client.makeUrl("/jokes/random/\(JokeService.AmountOfRandomJokes)", query: createUrlQueryParamsFromSettings(settings: settings)))
+        client.fetch(client.makeUrl("/jokes/random/\(JokeService.AmountOfRandomJokes)", query: createUrlQueryParams(settings: settings)))
     }
-    
-    private func createUrlQueryParamsFromSettings(settings: Settings) -> [URLQueryItem] {
+
+    private func createUrlQueryParams(settings: Settings) -> [URLQueryItem] {
         var queryItems = [URLQueryItem(name: "exclude", value: "[\(settings.excludedCategories.joined(separator: ","))]")]
 
         if (settings.firstName != "") {
@@ -48,7 +48,7 @@ final class JokeService {
         }
 
         if (settings.lastName != "") {
-            queryItems.append( URLQueryItem(name: "lastName", value: settings.lastName))
+            queryItems.append(URLQueryItem(name: "lastName", value: settings.lastName))
         }
 
         return queryItems

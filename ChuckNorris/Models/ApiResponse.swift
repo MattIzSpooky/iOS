@@ -4,7 +4,7 @@
 
 import Foundation
 
-struct ApiResponse<T: Codable> : Codable {
+struct ApiResponse<T: Codable>: Codable {
     let type: String
     let value: T
 }

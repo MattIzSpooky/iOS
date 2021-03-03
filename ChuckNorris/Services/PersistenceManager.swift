@@ -4,7 +4,7 @@
 
 import Foundation
 
-final class PersistenceManager<T : Codable> {
+final class PersistenceManager<T: Codable> {
     private let persistenceKey: String
 
     init(persistenceKey: String) {

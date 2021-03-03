@@ -4,7 +4,8 @@
 
 import Foundation
 
-struct FavoriteModel : Codable {
+struct FavoriteModel: Codable {
     let joke: JokeModel
-    let name: String
+    let firstName: String
+    let lastName: String
 }

@@ -6,24 +6,42 @@ import Foundation
 
 final class FavoriteJokeService {
     private let favoriteManager = PersistenceManager<[FavoriteModel]>(persistenceKey: "favorite-jokes")
-    private let settingsService = SettingsService()
 
-    func getFavorites() -> [JokeModel] {
+    private static let FallbackFirstName = "Chuck"
+    private static let FallbackLastName = "Norris"
+
+    func getFavorites(settings: Settings) -> [JokeModel] {
         guard let items = favoriteManager.fromDisk() else {
             return [JokeModel]()
         }
 
-        let settings = settingsService.get()
+        guard !items.isEmpty else {
+            return [JokeModel]()
+        }
 
         return items.map({ model -> JokeModel in
-            model.joke.joke = model.joke.joke
-                    .replacingOccurrences(of: model.name, with: "\(settings.firstName) \(settings.lastName)")
-
-            return model.joke
+            mapFavoriteToJoke(model, settings: settings)
         })
     }
 
-    func writeToDisk(favorites: [FavoriteModel]) {
-        favoriteManager.toDisk(items: favorites)
+    private func mapFavoriteToJoke(_ favorite: FavoriteModel, settings: Settings) -> JokeModel {
+        let firstName = settings.firstName.isEmpty ? FavoriteJokeService.FallbackFirstName : settings.firstName
+        let lastName = settings.lastName.isEmpty ? FavoriteJokeService.FallbackLastName : settings.lastName
+
+        let jokeWithReplacedFirstname = favorite.joke.joke
+                .replacingOccurrences(of: favorite.firstName, with: firstName)
+
+        favorite.joke.joke = jokeWithReplacedFirstname.replacingOccurrences(of: favorite.lastName, with: lastName)
+
+        return favorite.joke
+    }
+
+    func writeToDisk(favorites: [JokeModel], settings: Settings) {
+        let firstName = settings.firstName.isEmpty ? FavoriteJokeService.FallbackFirstName : settings.firstName
+        let lastName = settings.lastName.isEmpty ? FavoriteJokeService.FallbackLastName : settings.lastName
+
+        favoriteManager.toDisk(items: favorites.map { model -> FavoriteModel in
+            FavoriteModel(joke: model, firstName: firstName, lastName: lastName)
+        })
     }
 }

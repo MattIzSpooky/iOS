@@ -4,7 +4,7 @@
 
 import Foundation
 
-final class SettingsViewModel : ObservableObject {
+final class SettingsViewModel: ObservableObject {
     private let settingsService = SettingsService()
 
     @Published() var settings = Settings()

@@ -9,11 +9,6 @@ import SwiftUI
 
 struct JokesView: View {
     @ObservedObject private var jokesViewModel = JokesViewModel()
-    @State private var popover = false
-
-    let orientationChanged = NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)
-            .makeConnectable()
-            .autoconnect()
 
     var body: some View {
         NavigationView {
@@ -32,23 +27,22 @@ struct JokesView: View {
                 .navigationViewStyle(StackNavigationViewStyle())
     }
 
+    private func refresh() -> Void {
+        jokesViewModel.refreshSettings()
+        jokesViewModel.getJokes()
+    }
+
     private func trailing() -> some View {
         NavigationLink(destination: CategoriesView()
                 .environmentObject(jokesViewModel)
-                .onDisappear {
-                    jokesViewModel.refreshSettings()
-                    jokesViewModel.getJokes()
-                }) {
+                .onDisappear(perform: refresh)) {
             Text("Excl. Categories")
         }
     }
 
     private func leading() -> some View {
         NavigationLink(destination: SettingsView()
-                .onDisappear {
-                    jokesViewModel.refreshSettings()
-                    jokesViewModel.getJokes()
-                }) {
+                .onDisappear(perform: refresh)) {
             Text("Settings")
         }
     }
